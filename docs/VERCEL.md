@@ -62,6 +62,11 @@ store, so nothing changes there.
 4. **Check** `https://<your-project>.vercel.app/api/health` returns
    `{"ok":true, ..., "storage":"postgres"}`.
 
+Once the project is connected to GitHub, `main` is the production branch: a push
+to `main` builds and aliases production, and a push to any other branch produces a
+preview deployment. `vercel deploy` uploads are still possible for experiments, but
+they replace the production alias until the next push to `main`.
+
 ## Limits of this deployment
 
 - **No static-only host can run this app.** Vercel needs the Node function; GitHub
