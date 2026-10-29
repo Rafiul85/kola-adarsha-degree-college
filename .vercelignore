@@ -1,0 +1,6 @@
+.env
+.env.*
+server/data
+.test-data
+.prod-test-data
+docs

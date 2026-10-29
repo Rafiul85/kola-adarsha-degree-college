@@ -1,0 +1,45 @@
+{
+  "name": "kola-adarsha-degree-college",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Official website for Kola Adarsha Degree College (EIIN 123139), Kola, Badalgachhi, Naogaon.",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --watch server/index.mjs",
+    "dev:web": "vite",
+    "build": "tsc --noEmit && vite build",
+    "start": "node server/index.mjs --prod",
+    "preview": "npm run build && npm start",
+    "typecheck": "tsc --noEmit",
+    "test:api": "node scripts/api-test.mjs",
+    "test:prod": "node scripts/prod-smoke.mjs",
+    "test:ui": "node scripts/ui-smoke.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "lucide-react": "^1.64.0",
+    "multer": "^2.5.0",
+    "pg": "^8.23.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "concurrently": "^10.0.6",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.7"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
